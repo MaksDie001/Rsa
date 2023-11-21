@@ -1,0 +1,19 @@
+{% extends "app/home.html" %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static "app/css/article.css" %}">
+{% endblock %}
+{% block content %}
+    <div class="article">
+        <h2>{{ object.news_title }}</h2>
+        <img src="{{ object.news_img.url }}" class="article_img">
+        <hr/>
+        <p>{{ object.news_text|safe }}</p>
+    </div>
+<script>
+    let hz=document.querySelectorAll(".article p img ")
+    for (i in hz){
+        hz[i].style="color:black;"
+    }
+</script>
+{% endblock %}

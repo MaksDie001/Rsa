@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block link %}{% endblock %}
+    <link rel="stylesheet" href="{% static "app/css/bootstrap-grid.css" %}">
+    <link rel="stylesheet" href="{% static "app/css/reset.css" %}">
+    <link rel="stylesheet" href="{% static "app/css/header.css" %}">
+    <link rel="stylesheet" href="{% static "app/css/menu.css" %}">
+    <link rel="stylesheet" href="{% static "app/css/home.css" %}">
+</head>
+<body>
+<div class="base container">
+    <div class="row back">
+        <span class="head_link "><a href="/">Институт истории  Казахстана и Центральной Азии</a></span>
+    </div>
+    <img src="{% static "app/img/back.png" %}" width="100%" height="400">
+    <div class="menu">
+            <ul class="row">
+                <li class="col-4"><a href="/">Институт</a></li>
+                <li class="col-4"><a href="{% url "announcement" %}">обьявление</a></li>
+                <li class="col-4"><a href="{% url "journal" %}">Журналы</a></li>
+            </ul>
+    </div>
+    {% block content %}
+    {% endblock %}
+<footer>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="contacts">контактные данные:</div>
+            <p>Номер директора:+7 701 726 4565</p>
+            <p>Email:</p>
+        </div>
+        <div class="col-lg-6" style="display: flex">
+            <a href="https://www.facebook.com/?locale=ru_RU"><img src="{% static "app/img/facebook.png" %}" width="48px"></a>
+            <a href="https://www.instagram.com/"><img src="{% static "app/img/instagram.jpg" %}" width="48px"></a>
+            <a href="https://twitter.com/?lang=ru"><img src="{% static "app/img/x.png" %}" width="48px"></a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+</html>

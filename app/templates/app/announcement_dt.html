@@ -1,0 +1,14 @@
+{% extends "app/home.html" %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static "app/css/article.css" %}">
+{% endblock %}
+{% block content %}
+    <div class="article">
+        <h2>{{ object.ad_title }}</h2>
+        <img src="{{ object.ad_img.url }}">
+        <hr/>
+        <p>{{ object.ad_text|safe }}</p>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+.back{
+    background-image:url("../img/back.png");
+    background-size:cover;
+    height: 20%;
+    background-repeat:no-repeat;
+    width: inherit;
+    margin: 0 auto;
+    text-align: center;
+}
+.farabi_image{
+    width: 7vw;
+    margin-left: 100px;
+}
+.eagle{
+    width: 8vw;
+    position: absolute;
+    right: 100px;
+}
+.eagle_span{
+    position: relative;
+}
+.head_link{
+    font-size: 60px;
+    margin: 550px auto 300px auto;
+    background: white;
+    border-radius: 12px;
+}
+.head_link a{
+    color: rgb(0, 102, 160);
+    text-decoration: none;
+    border-bottom: 1px solid rgb(0, 102, 160);
+}
+.head_link a:hover{
+    border-bottom: 1px dashed rgb(0, 102, 160);
+}
+.header_txt_div{
+    display: block;
+}

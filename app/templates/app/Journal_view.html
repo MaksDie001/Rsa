@@ -1,0 +1,21 @@
+{% extends "app/home.html" %}
+{% block link %}
+    {% load static %}
+<link rel="stylesheet" href="{% static "app/css/base.css" %}">
+{% endblock %}
+{% block content %}
+       <div class=" base">
+    <h1>Содержимое журнала</h1>
+            <div class="news row">
+                {% for i in items %}
+                    <a class="col-xl-2" href="{% url "article" pk=i.id %}"><div class=" card">
+                        <img src="{{ i.news_img.url }}" width="300" />
+                        <p class="bs_title">{{ i.news_title|truncatechars_html:50 }}</p>
+                        <p class="bs_data">{{ i.data }}</p>
+                        <p class="bs_text">{{ i.news_text_card|truncatechars_html:150 }}</p>
+                    </div></a>
+                {% endfor %}
+            </div>
+    </div>
+{% endblock %}
+

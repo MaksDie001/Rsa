@@ -1,0 +1,35 @@
+{% extends "app/home.html" %}
+{% block link %}
+    {% load static %}
+<link rel="stylesheet" href="{% static "app/css/base.css" %}">
+{% endblock %}
+{% block content %}
+    <div class=" base">
+    <h1>Журналы</h1>
+            <div class="news row">
+                {% for i in items %}
+                    <a class="col-xl-2" href="{% url "journal" %}/{{ i.id }}"><div class=" card">
+                        <img src="{{ i.img.url }}" width="300" />
+                        <p class="bs_title">{{ i.title|truncatechars_html:50 }}</p>
+                    </div></a>
+                {% endfor %}
+            </div>
+        <div class="pagination">
+    <span class="step-links">
+        {% if items.has_previous %}
+            <a href="?page=1">&laquo; первая</a>
+            <a href="?page={{ items.previous_page_number }}">предыдущая</a>
+        {% endif %}
+
+        <span class="current">
+            Страница {{ items.number }} из {{ items.paginator.num_pages }}.
+        </span>
+
+        {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}">следующая</a>
+            <a href="?page={{ items.paginator.num_pages }}">последняя &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+    </div>
+{% endblock %}
